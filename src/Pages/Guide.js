@@ -8,14 +8,12 @@ const Guide = () => {
 
   return (
     <>
-      {/* Back Button */}
       <div className="back-container">
         <button className="back-btn" onClick={() => navigate("/")}>
           ← Back
         </button>
       </div>
 
-      {/* Buttons */}
       <div className="button-container">
         <button onClick={() => setActiveSection("new")}>ADD NEW FOLDER</button>
         <button onClick={() => setActiveSection("update")}>
@@ -23,7 +21,6 @@ const Guide = () => {
         </button>
       </div>
 
-      {/* -------- MOBILE VIEW -------- */}
       <div className="isMobile">
         {activeSection === "new" && (
           <div className="new">
@@ -99,7 +96,6 @@ const Guide = () => {
         )}
       </div>
 
-      {/* -------- LAPTOP VIEW -------- */}
       <div className="isLaptop">
         {activeSection === "new" && (
           <div className="new">
