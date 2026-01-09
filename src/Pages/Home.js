@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-// Reusable Info Tooltip Component
 const Info = ({ text }) => (
   <span
     style={{
@@ -18,7 +17,7 @@ const Info = ({ text }) => (
 );
 
 const Home = () => {
-  const navigate = useNavigate(); // <-- added navigate
+  const navigate = useNavigate();
 
   const [folder, setFolder] = useState("");
   const [name, setName] = useState("");
@@ -33,9 +32,6 @@ const Home = () => {
   const [syncName, setSyncName] = useState("");
   const [syncCover, setSyncCover] = useState("");
 
-  // -------------------------
-  // Upload handler
-  // -------------------------
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -47,22 +43,19 @@ const Home = () => {
         { folder, name, type, cover }
       );
 
-      setUploadMessage(res.data.message || "✅ Folder uploaded successfully!");
+      setUploadMessage(res.data.message || " Folder uploaded successfully!");
       setFolder("");
       setName("");
       setType("");
       setCover("");
     } catch (error) {
-      console.error("❌ Upload error:", error);
-      setUploadMessage("❌ Upload failed. Please check all fields and try again.");
+      console.error(" Upload error:", error);
+      setUploadMessage(" Upload failed. Please check all fields and try again.");
     } finally {
       setLoading(false);
     }
   };
 
-  // -------------------------
-  // Sync handler
-  // -------------------------
   const handleSync = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -80,7 +73,7 @@ const Home = () => {
       );
 
       setSyncMessage(
-        `✅ Sync completed: ${res.data.added} added, ${res.data.removed} removed. ${
+        ` Sync completed: ${res.data.added} added, ${res.data.removed} removed. ${
           res.data.coverUpdated ? "Cover image updated!" : ""
         }`
       );
@@ -89,8 +82,8 @@ const Home = () => {
       setSyncName("");
       setSyncCover("");
     } catch (error) {
-      console.error("❌ Sync error:", error);
-      setSyncMessage("❌ Sync failed. Please try again.");
+      console.error(" Sync error:", error);
+      setSyncMessage(" Sync failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -98,9 +91,7 @@ const Home = () => {
 
   return (
     <>
-      {/* ------------------------- */}
-      {/* Go to Guide Button */}
-      {/* ------------------------- */}
+
       <button
         onClick={() => navigate("/guide")}
         style={{
@@ -119,9 +110,6 @@ const Home = () => {
         📘 Go to Guide
       </button>
 
-      {/* ------------------------- */}
-      {/* Upload Form */}
-      {/* ------------------------- */}
       <div
         style={{
           maxWidth: "450px",
@@ -144,11 +132,10 @@ const Home = () => {
           📁 Import Cloudinary Folder
         </h2>
 
-        {/* rest of your code continues unchanged… */}
 
 
         <form onSubmit={handleSubmit}>
-          {/* Folder */}
+ 
           <div style={{ marginBottom: "1rem" }}>
             <label style={{ fontWeight: "bold", display: "block", marginBottom: "5px" }}>
               Folder Name
@@ -169,7 +156,7 @@ const Home = () => {
             />
           </div>
 
-          {/* Project Name */}
+  
           <div style={{ marginBottom: "1rem" }}>
             <label style={{ fontWeight: "bold", display: "block", marginBottom: "5px" }}>
               Project Name
@@ -190,7 +177,7 @@ const Home = () => {
             />
           </div>
 
-          {/* Type */}
+    
           <div style={{ marginBottom: "1rem" }}>
             <label style={{ fontWeight: "bold", display: "block", marginBottom: "5px" }}>
               Type
@@ -212,7 +199,6 @@ const Home = () => {
             />
           </div>
 
-          {/* Cover */}
           <div style={{ marginBottom: "1rem" }}>
             <label style={{ fontWeight: "bold", display: "block", marginBottom: "5px" }}>
               Cover Image URL
@@ -267,9 +253,6 @@ const Home = () => {
         )}
       </div>
 
-      {/* ------------------------- */}
-      {/* Sync Form */}
-      {/* ------------------------- */}
       <div
         style={{
           marginTop: "3rem",
@@ -295,7 +278,6 @@ const Home = () => {
         </h2>
 
         <form onSubmit={handleSync}>
-          {/* Cloudinary Folder */}
           <div style={{ marginBottom: "1rem" }}>
             <label style={{ fontWeight: "bold", display: "block", marginBottom: "5px" }}>
               Cloudinary Folder Name
@@ -316,7 +298,6 @@ const Home = () => {
             />
           </div>
 
-          {/* DB Folder Name */}
           <div style={{ marginBottom: "1rem" }}>
             <label style={{ fontWeight: "bold", display: "block", marginBottom: "5px" }}>
               Folder Name in Site
@@ -338,7 +319,6 @@ const Home = () => {
             />
           </div>
 
-          {/* Optional Cover Update */}
           <div style={{ marginBottom: "1rem" }}>
             <label style={{ fontWeight: "bold", display: "block", marginBottom: "5px" }}>
               New Cover Image URL (optional)
