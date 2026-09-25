@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API_URL from "../config";
 
 const Info = ({ text }) => (
   <span
@@ -39,7 +40,7 @@ const Home = () => {
 
     try {
       const res = await axios.post(
-        "https://events-glamour-backend.vercel.app/api/images/upload",
+        `${API_URL}/api/images/upload`,
         { folder, name, type, cover }
       );
 
@@ -68,7 +69,7 @@ const Home = () => {
       }
 
       const res = await axios.post(
-        "https://events-glamour-backend.vercel.app/api/images/sync",
+        `${API_URL}/api/images/sync`,
         payload
       );
 
@@ -92,23 +93,46 @@ const Home = () => {
   return (
     <>
 
-      <button
-        onClick={() => navigate("/guide")}
+      <div
         style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "12px",
+          flexWrap: "wrap",
           margin: "20px auto",
-          display: "block",
-          padding: "10px 20px",
-          backgroundColor: "#007bff",
-          color: "#fff",
-          border: "none",
-          borderRadius: "6px",
-          fontSize: "1rem",
-          fontWeight: "bold",
-          cursor: "pointer",
         }}
       >
-        📘 Go to Guide
-      </button>
+        <button
+          onClick={() => navigate("/guide")}
+          style={{
+            padding: "10px 20px",
+            backgroundColor: "#007bff",
+            color: "#fff",
+            border: "none",
+            borderRadius: "6px",
+            fontSize: "1rem",
+            fontWeight: "bold",
+            cursor: "pointer",
+          }}
+        >
+          📘 Go to Guide
+        </button>
+        <button
+          onClick={() => navigate("/reviews")}
+          style={{
+            padding: "10px 20px",
+            backgroundColor: "#6f42c1",
+            color: "#fff",
+            border: "none",
+            borderRadius: "6px",
+            fontSize: "1rem",
+            fontWeight: "bold",
+            cursor: "pointer",
+          }}
+        >
+          Reviews
+        </button>
+      </div>
 
       <div
         style={{

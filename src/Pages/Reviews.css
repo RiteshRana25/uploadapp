@@ -1,0 +1,179 @@
+.reviews-admin {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+.reviews-admin-top h1 {
+  margin: 0.4rem 0 0.25rem;
+  font-size: 1.6rem;
+}
+
+.reviews-admin-top p {
+  margin: 0 0 1.25rem;
+  color: #555;
+}
+
+.reviews-back,
+.reviews-filters button,
+.review-admin-actions button {
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.reviews-back {
+  padding: 8px 16px;
+  background: #555;
+  color: #fff;
+}
+
+.reviews-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1.25rem;
+}
+
+.reviews-filters button {
+  padding: 8px 14px;
+  background: #fff;
+  border: 1px solid #ccc;
+  text-transform: capitalize;
+}
+
+.reviews-filters button.active {
+  background: #6f42c1;
+  color: #fff;
+  border-color: #6f42c1;
+}
+
+.reviews-filters span {
+  margin-left: 6px;
+  opacity: 0.8;
+}
+
+.reviews-error {
+  color: #b42318;
+  font-weight: bold;
+}
+
+.reviews-empty {
+  color: #666;
+}
+
+.reviews-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.review-admin-card {
+  background: #fff;
+  border: 1px solid #e4e4e4;
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.review-admin-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.review-admin-head time {
+  color: #777;
+  font-size: 0.85rem;
+}
+
+.status {
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+.status-pending {
+  background: #fff4d6;
+  color: #8a5a00;
+}
+
+.status-approved {
+  background: #e5f6ea;
+  color: #146c2e;
+}
+
+.status-rejected {
+  background: #fde8e8;
+  color: #9b1c1c;
+}
+
+.review-admin-card h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.1rem;
+}
+
+.review-admin-card p {
+  margin: 0;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.review-admin-card label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.review-admin-card input,
+.review-admin-card textarea {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.review-admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.review-admin-actions button {
+  padding: 8px 14px;
+  color: #fff;
+}
+
+.review-admin-actions .approve {
+  background: #28a745;
+}
+
+.review-admin-actions .reject {
+  background: #dc3545;
+}
+
+.review-admin-actions .save {
+  background: #007bff;
+}
+
+.review-admin-actions .ghost {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.review-admin-actions button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
